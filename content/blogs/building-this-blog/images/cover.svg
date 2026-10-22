@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="A blog post folder containing manifest.json, index.md and an images directory">
+  <defs>
+    <linearGradient id="glow" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6366f1" stop-opacity="0.35" />
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.05" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="#0b0b0f" />
+  <circle cx="1010" cy="130" r="260" fill="url(#glow)" />
+  <g font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="34" fill="#e5e5e5">
+    <text x="80" y="118" fill="#8b8b93" font-size="24" letter-spacing="2">content / blogs /</text>
+    <text x="80" y="196" fill="#a5b4fc" font-weight="600">building-this-blog/</text>
+    <line x1="96" y1="222" x2="96" y2="470" stroke="#2a2a31" stroke-width="2" />
+    <text x="140" y="272">manifest.json</text>
+    <text x="140" y="332">index.md</text>
+    <text x="140" y="392">images/</text>
+    <text x="220" y="452" fill="#8b8b93" font-size="27">cover.svg</text>
+  </g>
+  <line x1="80" y1="516" x2="1120" y2="516" stroke="#22222a" stroke-width="2" />
+  <text x="80" y="576" font-family="ui-sans-serif, system-ui, sans-serif" font-size="27" fill="#808080">
+    A post is a folder. Publishing is a commit.
+  </text>
+</svg>

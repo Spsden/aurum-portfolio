@@ -1,0 +1,9 @@
+{
+  "title": "Building this blog: plain markdown, no infrastructure",
+  "author": "Suraj Pratap Singh",
+  "date": "2026-10-08",
+  "description": "How posts live as markdown folders in the repo, render to static HTML, and why that beats a database and an API for a personal blog.",
+  "tags": ["nextjs", "markdown", "mermaid"],
+  "cover": "images/cover.svg",
+  "draft": false
+}

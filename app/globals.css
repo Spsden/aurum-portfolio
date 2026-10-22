@@ -1,0 +1,305 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+@config "../tailwind.config.js";
+
+
+:root {
+  /* Light theme - warm sand with a deep teal accent */
+  --background: #faf8f3;
+  --foreground: #101d1a;
+  --background-50: #ffffff;
+  --background-100: #f5f2e9;
+  --background-200: #ede8db;
+  --background-300: #ddd5c3;
+  --background-400: #c8bda4;
+  --foreground-50: #0a1412;
+  --foreground-100: #14231f;
+  --foreground-200: #1e332d;
+  --foreground-300: #33544a;
+  --foreground-400: #4d7266;
+  --foreground-500: #6d9084;
+  --foreground-600: #0f766e;
+  --accent: #0f766e;
+  --accent-hover: #0b5f59;
+  --accent-soft: #d3f2ec;
+  --accent-ring: #14b8a6;
+  --accent-contrast: #ffffff;
+  /* Light theme shadows - dark shadows for light background */
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --shadow-lg:
+    0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+  --shadow-xl:
+    0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+}
+
+.dark {
+  --background: #07110f;
+  --foreground: #eff6f3;
+  --background-50: #050d0b;
+  --background-100: #0b1714;
+  --background-200: #10211c;
+  --background-300: #172e27;
+  --background-400: #1f3e34;
+  --foreground-50: #ffffff;
+  --foreground-100: #e6efeb;
+  --foreground-200: #cfe0d9;
+  --foreground-300: #a9c4ba;
+  --foreground-400: #7d9c91;
+  --foreground-500: #5f7e73;
+  --foreground-600: #5eead4;
+  --accent: #5eead4;
+  --accent-hover: #99f6e4;
+  --accent-soft: #134e4a;
+  --accent-ring: #2dd4bf;
+  --accent-contrast: #052e2b;
+  --shadow-sm: 0 1px 2px 0 rgb(255 255 255 / 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgb(255 255 255 / 0.1),
+    0 2px 4px -2px rgb(255 255 255 / 0.05);
+  --shadow-lg:
+    0 10px 15px -3px rgb(255 255 255 / 0.1),
+    0 4px 6px -4px rgb(255 255 255 / 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgb(255 255 255 / 0.15),
+    0 8px 10px -6px rgb(255 255 255 / 0.1);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-bg-50: var(--background-50);
+  --color-bg-100: var(--background-100);
+  --color-bg-200: var(--background-200);
+  --color-bg-300: var(--background-300);
+  --color-bg-400: var(--background-400);
+  --color-fg-50: var(--foreground-50);
+  --color-fg-100: var(--foreground-100);
+  --color-fg-200: var(--foreground-200);
+  --color-fg-300: var(--foreground-300);
+  --color-fg-400: var(--foreground-400);
+  --color-fg-500: var(--foreground-500);
+  --color-fg-600: var(--foreground-600);
+  --color-accent: var(--accent);
+  --color-accent-hover: var(--accent-hover);
+  --color-accent-soft: var(--accent-soft);
+  --color-accent-ring: var(--accent-ring);
+  --color-accent-contrast: var(--accent-contrast);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-stack-headline: var(--font-stack-sans-headline);
+}
+
+body {
+  background: var(--background);
+  background-image:
+    radial-gradient(
+      ellipse 80% 55% at 12% -10%,
+      color-mix(in srgb, var(--accent) 12%, transparent),
+      transparent 70%
+    ),
+    radial-gradient(
+      ellipse 70% 50% at 92% 4%,
+      color-mix(in srgb, var(--accent) 7%, transparent),
+      transparent 65%
+    );
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--foreground);
+  /* font-family: Arial, Helvetica, sans-serif;
+   */
+  font-family: "Stack Sans Headline", sans-serif;
+  font-optical-sizing: auto;
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
+}
+
+/* ------------------------------------------------------------------ *
+ * Blog article — typography bound to the site tokens, code highlighting
+ * (shiki, dual theme) and mermaid diagrams.
+ * ------------------------------------------------------------------ */
+
+/* The typography plugin exposes its palette as --tw-prose-* variables.
+   Point them at the theme tokens so the article follows light/dark. */
+.prose {
+  --tw-prose-body: var(--foreground-300);
+  --tw-prose-headings: var(--foreground);
+  --tw-prose-lead: var(--foreground-300);
+  --tw-prose-links: var(--accent);
+  --tw-prose-bold: var(--foreground);
+  --tw-prose-counters: var(--foreground-400);
+  --tw-prose-bullets: var(--foreground-400);
+  --tw-prose-hr: var(--background-300);
+  --tw-prose-quotes: var(--foreground-300);
+  --tw-prose-quote-borders: var(--foreground-400);
+  --tw-prose-captions: var(--foreground-400);
+  --tw-prose-code: var(--foreground-200);
+  --tw-prose-pre-code: var(--foreground-200);
+  --tw-prose-pre-bg: var(--background-300);
+  --tw-prose-th-borders: var(--background-400);
+  --tw-prose-td-borders: var(--background-300);
+}
+.dark .prose {
+  --tw-prose-links: var(--accent);
+}
+
+.prose pre {
+  overflow-x: auto;
+  border: 1px solid var(--background-400);
+  border-radius: 0.75rem;
+}
+
+.prose :where(code)::before,
+.prose :where(code)::after {
+  content: none;
+}
+.prose :where(code):not(:where(pre code)) {
+  background: var(--background-200);
+  border: 1px solid var(--background-300);
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.375rem;
+  font-weight: 400;
+}
+
+/* rehype-pretty-code with dual themes emits --shiki-light / --shiki-dark
+   per token; switch on the `.dark` class set by next-themes. */
+.prose code[data-theme*=" "] {
+  color: var(--shiki-light);
+}
+.prose code[data-theme*=" "] span {
+  color: var(--shiki-light);
+}
+.dark .prose code[data-theme*=" "] {
+  color: var(--shiki-dark);
+}
+.dark .prose code[data-theme*=" "] span {
+  color: var(--shiki-dark);
+}
+
+/* Mermaid host block. Lives inside `.prose` but opts out via `not-prose`.
+   Do not set `font-family` here: mermaid measures label text in the body font
+   and emits `<svg font-family:inherit>`, so the diagram renders in whatever
+   this element inherits. Pinning monospace here (wider than the measured
+   metrics) made every node label overflow its box. */
+.mermaid {
+  margin: 1.75rem 0;
+  /* No inline padding: it would be counted against the diagram's own width and
+     push a diagram that is a few pixels too wide into a pointless scroll. */
+  padding: 1.25rem 0;
+  display: flex;
+  overflow-x: auto;
+  border-radius: 0.75rem;
+  border: 1px solid var(--color-bg-300);
+  background: var(--color-bg-200);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+  color: var(--color-fg-400);
+}
+/* Diagrams keep their intrinsic size and scroll inside the host rather than
+   shrinking to the column width. Centring has to come from the auto margin:
+   a `justify-content: center` flex item overflows on the inline-start side,
+   where the scroll container cannot reach it. `flex: none` stops the flex
+   item from shrinking back to the column. Scoped to the diagram itself —
+   the expand button below holds an icon on the same path. */
+.mermaid > svg {
+  flex: none;
+  margin-inline: auto;
+}
+/* Wraps a rendered diagram so the expand button can be pinned to the panel
+   corner instead of scrolling away with the diagram. */
+.mermaid-frame {
+  position: relative;
+}
+/* Only added to diagrams that are wider than the column. */
+.mermaid-expand {
+  position: absolute;
+  z-index: 1;
+  top: 0.5rem;
+  right: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--color-bg-300);
+  border-radius: 0.5rem;
+  background: var(--color-bg-100);
+  color: var(--color-fg-400);
+  cursor: pointer;
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease;
+}
+.mermaid-expand:hover {
+  color: var(--color-fg);
+  background: var(--color-bg-300);
+}
+.mermaid-expand svg {
+  width: 0.9rem;
+  height: 0.9rem;
+}
+/* Full-size diagram, over the page. */
+.mermaid-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgb(0 0 0 / 0.72);
+  backdrop-filter: blur(2px);
+}
+.mermaid-modal-body {
+  max-width: 100%;
+  max-height: 100%;
+  overflow: auto;
+}
+/* Scale to the overlay, keeping the diagram's own aspect ratio; anything that
+   still does not fit scrolls inside the body. */
+.mermaid-modal-body svg {
+  max-width: 100%;
+  max-height: 84vh;
+  width: auto;
+  height: auto;
+}
+.mermaid-modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  border: 1px solid rgb(255 255 255 / 0.2);
+  border-radius: 0.5rem;
+  background: rgb(255 255 255 / 0.08);
+  color: #ffffff;
+  cursor: pointer;
+}
+.mermaid-modal-close:hover {
+  background: rgb(255 255 255 / 0.18);
+}
+.mermaid-modal-close svg {
+  width: 1.1rem;
+  height: 1.1rem;
+}
+/* Unrendered or invalid diagrams show their source instead of a blank box. */
+.mermaid[data-error="true"] {
+  display: block;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Figure + caption produced by the image rehype plugin. */
+.prose figure {
+  margin: 1.75rem 0;
+}
+.prose figcaption {
+  margin-top: 0.5rem;
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--color-fg-400);
+}

@@ -1,0 +1,9 @@
+{
+  "title": "I Put a Browser in a MicroVM So an Agent Could Use It Inside Chat",
+  "author": "Suraj Pratap Singh",
+  "date": "2026-10-11",
+  "description": "A rough but working experiment in streaming an isolated Chromium browser into an AI chat.",
+  "tags": ["microvm", "browser-automation", "cdp", "ai-agents"],
+  "cover": "images/microvm-browser-architecture.svg",
+  "draft": false
+}
